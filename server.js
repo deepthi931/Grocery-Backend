@@ -4,7 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 // Load env vars
-dotenv.config();
+require('dotenv').config()
 
 // Connect to database
 connectDB();
@@ -17,7 +17,7 @@ const corsOptions = {
     const allowedOrigins = [
       'http://localhost:5173',
       'http://localhost:3000',
-      process.env.CLIENT_URL
+      'https://grocery-backend-nu-flame.vercel.app/'
     ];
     // Allow Vercel preview deployments
     if (!origin || allowedOrigins.includes(origin) || origin.includes('.vercel.app')) {
